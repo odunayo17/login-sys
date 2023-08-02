@@ -1,0 +1,47 @@
+{% extends "authentication/base.html" %}
+
+
+    {% block body %}
+        <div class="form_container">
+               <form action="" method="POST">
+                {% csrf_token %}
+                <h2>signup</h2>
+                <div class="container">
+                    <label for="name">First Name:</label>
+                        <input type="text" name="fname" placeholder="Your First Name" required>
+                </div>
+    
+                <div class="container">
+                    <label for="lname">Last Name:</label>
+                        <input type="text" name="lname" placeholder="Your Last Name" required>
+                </div>
+    
+                <div class="container">
+                    <label for="uname">User Name:</label>
+                        <input type="text" name="uname" placeholder="Your User Name" required>
+                </div>
+    
+                <div class="container">
+                    <label for="email">Email:</label>
+                        <input type="email" name="email" placeholder="youremail@example.com" required>
+                </div>
+    
+                <div class="container">
+                    <label for="pass">Password:</label>
+                        <input type="password" name="pass" placeholder="Create Password">
+                </div>
+                
+                <div class="container">
+                    <label for="pass2">Confirm Password:</label>
+                        <input type="password" name="pass2" placeholder="Password">
+                </div>
+                
+                <div class="container">
+                        <input type="submit" value="Sign up">
+                </div>
+    
+               <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+                
+            </form>
+       </div>
+    {% endblock %}

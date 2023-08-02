@@ -1,0 +1,17 @@
+{% extends "authentication/base.html" %}
+
+
+    {% block body %}
+        <div class="home">
+            <h1>Logout</h1>
+            {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        <button type="submit"><a href="{% url 'login' %}">login</a></button>
+        <button type="submit"><a href="{% url 'signup' %}">signup</a></button>
+        </div>
+    {% endblock %}
